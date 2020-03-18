@@ -1,0 +1,115 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Flute Scales</title>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@0.4.0/dist/confetti.browser.min.js"></script>
+<script>
+
+function r(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function launchConfetti(){
+    confetti({
+      angle: r(55, 125),
+      spread: r(50, 70),
+      particleCount: r(50, 100),
+      origin: {
+          y: .4
+      }
+    });
+  };
+
+
+function MajorScaleGet(){
+var z = Math.floor((Math.random() * 6) + 1);
+if (z == 1){out = "C Major";}
+else if (z == 2){out = "F Major";}
+else if (z == 3){out = "Bb Major";}
+else if (z == 4){out = "G Major";}
+else if (z == 5){out = "D Major";}
+else if (z == 6){out = "c h r o m a t i c";}
+return out;
+}
+	
+function MajMinScaleGet(){
+var z = Math.floor((Math.random() * 6) + 1);
+if (z == 1){out = "C Major / a minor";}
+else if (z == 2){out = "F Major / d minor";}
+else if (z == 3){out = "Bb Major / g minor";}
+else if (z == 4){out = "G Major / e minor";}
+else if (z == 5){out = "D Major / b minor";}
+else if (z == 6){out = "c h r o m a t i c";}
+return out;
+}
+
+function AllScaleGet(){
+var z = Math.floor((Math.random() * 13) + 1);
+if (z == 1){out = "C Major / a minor";}
+else if (z == 2){out = "F Major / d minor";}
+else if (z == 3){out = "Bb Major / g minor";}
+else if (z == 4){out = "G Major / e minor";}
+else if (z == 5){out = "D Major / b minor";}
+else if (z == 6){out = "c h r o m a t i c";}
+else if (z == 7){out = "Eb Major / c minor";}
+else if (z == 8){out = "Ab Major / f minor";}
+else if (z == 9){out = "Db Major / Bb minor";}
+else if (z == 10){out = "Gb Major / Eb minor";}
+else if (z == 11){out = "A Major / F# minor";}
+else if (z == 12){out = "E Major / C# minor";}
+else if (z == 13){out = "B Major / G# minor";}
+return out;
+}
+						
+function MajorScale(){
+var majorscale =  MajorScaleGet();
+document.getElementById("demo").innerHTML = majorscale;
+launchConfetti();
+}	
+
+function MajMinScale(){
+var majminscale =  MajMinScaleGet();
+document.getElementById("demo").innerHTML = majminscale;
+launchConfetti();
+}	
+
+function AllScale(){
+var allscale =  AllScaleGet();
+document.getElementById("demo").innerHTML = allscale;
+launchConfetti();
+}	
+
+
+</script>
+</head>
+
+<body>
+<div style="margin-left:auto;margin-right:auto;width:60%;">
+<h1 style="text-align: center; font-size:200%;">♬ Jessica's Flute Scale Generator! ♬</h1>
+<hr>
+<div style="text-align: center; font-size:150%; height:10%;">
+<p>Time for scales!  Roll the dice…</p>
+<div style="text-align: center; font-size:130%; height:2em;overflow: scroll;padding:.5em;">
+<p id="demo" style="margin-left:auto;margin-right:auto;margin-top:0pt;margin-bottom:0pt;"></p>
+</div>
+<button style="text-align: center; font-size:100%; margin:2pt;" type="button" class="button" onclick="MajorScale()">⚀ Level One ⚀</button> 
+<button style="text-align: center; font-size:100%; margin:2pt;" type="button" class="button" onclick="MajMinScale()">⚁ Level Two ⚁</button>
+<button style="text-align: center; font-size:100%; margin:2pt;" type="button" onclick="AllScale()">⚂ Level Three ⚂</button><br>
+</div>
+<div style="text-align: center; font-size:120%;">
+<hr>
+<p>
+<br>
+Haven't learned this scale yet?  **Wild card!** <i>You</i> choose a scale!<br><br>
+
+<i>Psst...</i>Do you know all your minor scales - natural, harmonic, melodic? Try them all!<br><br>
+
+BoNuS pOiNtS !! ~~Could you try them two octaves?~~
+</p>
+</div>
+
+
+</body>
+    
+</html>
